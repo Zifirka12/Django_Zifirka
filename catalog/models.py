@@ -1,5 +1,6 @@
 from django.db import models
 
+<<<<<<< HEAD
 
 class Category(models.Model):
     name = models.CharField(
@@ -71,3 +72,6 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+=======
+# Create your models here.
+>>>>>>> f5a89dbfa3b67e95ccc87a50d5bd8b6040a43f0b

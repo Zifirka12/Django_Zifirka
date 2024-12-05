@@ -11,22 +11,35 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+<<<<<<< HEAD
 import os
 from dotenv import load_dotenv
+=======
+>>>>>>> f5a89dbfa3b67e95ccc87a50d5bd8b6040a43f0b
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+<<<<<<< HEAD
 load_dotenv()
+=======
+>>>>>>> f5a89dbfa3b67e95ccc87a50d5bd8b6040a43f0b
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if os.getenv("DEBUG") == "True" else False
+=======
+SECRET_KEY = 'django-insecure-ymzk_0ld8g7^d=5grge7wgd61cyt$_wb#yo61!z$+3-q&(0&9c'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+>>>>>>> f5a89dbfa3b67e95ccc87a50d5bd8b6040a43f0b
 
 ALLOWED_HOSTS = ["*"]
 
@@ -78,6 +91,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
+<<<<<<< HEAD
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": os.getenv("NAME"),
@@ -88,6 +102,15 @@ DATABASES = {
     }
 }
 
+=======
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+
+>>>>>>> f5a89dbfa3b67e95ccc87a50d5bd8b6040a43f0b
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
