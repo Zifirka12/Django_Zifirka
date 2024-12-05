@@ -1,0 +1,36 @@
+[
+{
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+        "name": "Я щас трусы сниму",
+        "description": "трусы с пуджом"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+        "name": "футболка с надписью \"я щас трусы сниму\"",
+        "description": "ы ы е",
+        "image": "product/image/негр.jpg",
+        "category": 1,
+        "price": "2100000",
+        "created_at": "2024-12-16",
+        "updated_at": "2024-12-16"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+        "name": "ы ые",
+        "description": "ввввв",
+        "image": "",
+        "category": null,
+        "price": "212111111",
+        "created_at": "2024-12-16",
+        "updated_at": "2024-12-16"
+    }
+}
+]
