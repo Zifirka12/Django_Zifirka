@@ -1,26 +1,24 @@
 
 from pathlib import Path
-<<<<<<< HEAD
+
 import os
 from dotenv import load_dotenv
-=======
->>>>>>> f5a89dbfa3b67e95ccc87a50d5bd8b6040a43f0b
+
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-<<<<<<< HEAD
-load_dotenv()
-=======
->>>>>>> f5a89dbfa3b67e95ccc87a50d5bd8b6040a43f0b
 
-<<<<<<< HEAD
+load_dotenv()
+
+
 SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = True if os.getenv("DEBUG") == "True" else False
-=======
+
 SECRET_KEY = 'django-insecure-ymzk_0ld8g7^d=5grge7wgd61cyt$_wb#yo61!z$+3-q&(0&9c'
 
 DEBUG = True
->>>>>>> f5a89dbfa3b67e95ccc87a50d5bd8b6040a43f0b
+
 
 ALLOWED_HOSTS = ["*"]
 
@@ -67,7 +65,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 
 DATABASES = {
-<<<<<<< HEAD
+
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": os.getenv("NAME"),
@@ -78,7 +76,7 @@ DATABASES = {
     }
 }
 
-=======
+
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
@@ -86,7 +84,6 @@ DATABASES = {
 }
 
 
->>>>>>> f5a89dbfa3b67e95ccc87a50d5bd8b6040a43f0b
 
 AUTH_PASSWORD_VALIDATORS = [
     {
