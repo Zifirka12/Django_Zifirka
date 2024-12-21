@@ -4,6 +4,4 @@ from newapp.views import home
 
 app_name = NewappConfig.name
 
-urlpatterns = [
-    path('', home, name='home')
-]
+urlpatterns = [path("", home, name="home")]

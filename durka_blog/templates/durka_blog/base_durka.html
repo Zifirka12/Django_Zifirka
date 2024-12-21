@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
-    <title>s s t</title>
+    <title>DurkaBlog</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
 
@@ -166,7 +166,7 @@
 
 
 <header data-bs-theme="dark">
-{% include 'includes/inc_menu.html' %}
+{% include 'durka_blog/includes/inc_menu.html' %}
 </header>
 
 <main>
@@ -174,11 +174,12 @@
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">пидиди</h1>
-        <p class="lead text-body-secondary">Магазин с мерчом пидиди и другим ребятами из палаты 406 псих отделения.</p>
+        <h1 class="fw-light">DurkaBlog</h1>
+        <p class="lead text-body-secondary">Блог о психбольных и других бедолаг из сообщества 406.</p>
+        <a class="btn btn-primary" href="{% url 'durka_blog:posts_create'%}" role="button">Создать новый пост</a>
         <p>
-          <a href="https://www.twitch.tv/absizee" class="btn btn-primary my-2">Ссылка на лечещего врача разработчика</a>
-          <a href="https://my.sky.pro/student-cabinet/showcase" class="btn btn-secondary my-2">Zifirka</a>
+          <a href="https://github.com/Zifirka12" class="btn btn-primary my-2">Ссылка на хозяина 406</a>
+          <a href="https://www.twitch.tv/absizee" class="btn btn-secondary my-2">Лечащий врач</a>
         </p>
       </div>
     </div>
@@ -191,9 +192,9 @@
 <footer class="text-body-secondary py-5">
   <div class="container">
     <p class="float-end mb-1">
-      <a href="#">Back to top</a>
+      <a href="">Обратно</a>
     </p>
-    <p class="mb-1">Пидиди - это магазин, где вы можете купить уникальный мерч с псих больными из сообщества 406 палаты и не только!</p>
+    <p class="mb-1">Пидиди - это блог, где вы можете купить уникальный мерч с псих больными из сообщества 406 палаты и не только!</p>
     <p class="mb-0">Не знакомы с Псих больными? Можете зайти на самый большой ру <a href="https://t.me/Absizee_god">тг канал</a>. Там в чате они активно обсуждают кто из них психически здаров</p>
   </div>
 </footer>
