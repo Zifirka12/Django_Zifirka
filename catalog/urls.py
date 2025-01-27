@@ -1,5 +1,7 @@
 from django.urls import path
 from catalog.apps import CatalogConfig
+from django.urls import path
+from .views import EditProductView
 from catalog.views import (
     ProductListView,
     ProductDetailView,

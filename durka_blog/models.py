@@ -1,7 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Post(models.Model):
+    # Поле для статуса публикации
+    is_published = models.BooleanField(default=False)
+
     name = models.CharField(
         max_length=100,
         verbose_name="Заголовок",
@@ -20,9 +24,8 @@ class Post(models.Model):
         verbose_name="Превью",
         help_text="Вставьте изображение для поста",
     )
-    created_at = models.DateField(
-        blank=True,
-        null=True,
+    created_at = models.DateTimeField(
+        auto_now_add=True,
         verbose_name="Дата создания",
         help_text="Введите дату создания",
     )
@@ -36,9 +39,12 @@ class Post(models.Model):
     )
 
     class Meta:
+        permissions = [
+            ("can_unpublish_post", "Может отменять публикацию поста"),
+        ]
         verbose_name = "Пост"
         verbose_name_plural = "Посты"
-        ordering = ["description", "name"]
+        ordering = ["-created_at"]  # Упрощено сортировка
 
     def __str__(self):
         return self.name

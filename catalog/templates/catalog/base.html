@@ -164,6 +164,19 @@
       </ul>
     </div>
 
+    {% for product in products %}
+<tr>
+    <td>{{ product.title }}</td>
+    <td>
+        {% if request.user == product.owner %}
+            <a href="{% url 'edit_product' product.pk %}">Редактировать</a>
+            <a href="{% url 'delete_product' product.pk %}">Удалить</a>
+        {% endif %}
+    </td>
+</tr>
+{% endfor %}
+
+
 
 <header data-bs-theme="dark">
 {% include 'catalog/includes/inc_menu.html' %}
