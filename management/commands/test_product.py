@@ -26,6 +26,10 @@ class Command(BaseCommand):
             product_data["category"] = category
             product, created = Product.objects.get_or_create(**product_data)
             if created:
-                self.stdout.write(self.style.SUCCESS(f"Successfully added product: {product.name}"))
+                self.stdout.write(
+                    self.style.SUCCESS(f"Successfully added product: {product.name}")
+                )
             else:
-                self.stdout.write(self.style.WARNING(f"Product already exists: {product.name}"))
+                self.stdout.write(
+                    self.style.WARNING(f"Product already exists: {product.name}")
+                )

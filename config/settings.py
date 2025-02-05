@@ -1,27 +1,17 @@
-
-from pathlib import Path
-
 import os
+from pathlib import Path
 from dotenv import load_dotenv
 
-
+load_dotenv(override=True)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-load_dotenv()
-
-
 SECRET_KEY = os.getenv("SECRET_KEY")
-DEBUG = True if os.getenv("DEBUG") == "True" else False
-
-SECRET_KEY = 'django-insecure-ymzk_0ld8g7^d=5grge7wgd61cyt$_wb#yo61!z$+3-q&(0&9c'
 
 DEBUG = True
 
 
 ALLOWED_HOSTS = ["*"]
-
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -31,7 +21,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "catalog",
-    "durka_blog",
+    "blog",
+    "users",
 ]
 
 MIDDLEWARE = [
@@ -66,7 +57,6 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 
 DATABASES = {
-
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": os.getenv("NAME"),
@@ -93,8 +83,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-
 LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "Europe/Moscow"
@@ -103,9 +91,26 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-
 STATIC_URL = "static/"
-STATICFILES_DIRS = [BASE_DIR / "static"]
+STATICFILES_DIRS = (BASE_DIR / "static",)
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+AUTH_USER_MODEL = "users.User"
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
+
+INVALID_WORDS = [
+    "казино",
+    "криптовалюта",
+    "крипта",
+    "биржа",
+    "дешево",
+    "бесплатно",
+    "обман",
+    "полиция",
+    "радар",
+]

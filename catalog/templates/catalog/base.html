@@ -8,17 +8,13 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
-    <title>s s t</title>
+    <title>bible</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
-
-
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
 <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet">
 
-    <!-- Favicons DELETED -->
 <meta name="theme-color" content="#712cf9">
 
 
@@ -101,7 +97,7 @@
       }
 
       .card-text {
-        height: 5em;
+        height: 3em;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
@@ -164,22 +160,9 @@
       </ul>
     </div>
 
-    {% for product in products %}
-<tr>
-    <td>{{ product.title }}</td>
-    <td>
-        {% if request.user == product.owner %}
-            <a href="{% url 'edit_product' product.pk %}">Редактировать</a>
-            <a href="{% url 'delete_product' product.pk %}">Удалить</a>
-        {% endif %}
-    </td>
-</tr>
-{% endfor %}
-
-
 
 <header data-bs-theme="dark">
-{% include 'catalog/includes/inc_menu.html' %}
+{% include 'catalog/includes/headers.html' %}
 </header>
 
 <main>
