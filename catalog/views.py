@@ -8,13 +8,23 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
 )
-
+from django.shortcuts import render
 from catalog.forms import ProductForm, ProductModeratorForm
-from catalog.models import Product
+from catalog.models import Product, Category
+from services import get_products_from_cache, get_products_by_category
 
 
 class ProductListView(ListView):
     model = Product
+
+    def get_queryset(self):
+        return get_products_from_cache().filter(is_public=True)
+
+
+def products_by_category_view(request, category_id):
+    products = get_products_by_category(category_id)
+    category = Category.objects.get(id=category_id)
+    return render(request, 'catalog/products_by_category.html', {'products': products, 'category': category})
 
 
 class ProductDetailView(DetailView):
@@ -48,7 +58,7 @@ class ProductUpdateView(LoginRequiredMixin, UpdateView):
         if user == self.object.owner or user.has_perm("catalog.update_product"):
             return ProductForm
         if user.has_perm("catalog.can_unpublish_product") and user.has_perm(
-            "catalog.delete_product"
+                "catalog.delete_product"
         ):
             return ProductModeratorForm
         raise PermissionDenied
